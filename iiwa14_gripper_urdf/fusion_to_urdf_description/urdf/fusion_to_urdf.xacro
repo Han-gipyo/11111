@@ -1,0 +1,113 @@
+<?xml version="1.0" ?>
+<robot name="fusion_to_urdf" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find fusion_to_urdf_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find fusion_to_urdf_description)/urdf/fusion_to_urdf.trans" />
+<xacro:include filename="$(find fusion_to_urdf_description)/urdf/fusion_to_urdf.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.08127679183221564 0.03821057434325542 -0.02659155216921605" rpy="0 0 0"/>
+    <mass value="0.14502326695982237"/>
+    <inertia ixx="0.000108" iyy="0.000146" izz="0.000138" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion_to_urdf_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion_to_urdf_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_axis_1">
+  <inertial>
+    <origin xyz="0.03500020816778461 2.1672533808553274e-07 4.4783073031504084e-07" rpy="0 0 0"/>
+    <mass value="0.013076879420567386"/>
+    <inertia ixx="0.0" iyy="6e-06" izz="6e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.116277 -0.05487 0.026592" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion_to_urdf_description/meshes/gripper_axis_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.116277 -0.05487 0.026592" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion_to_urdf_description/meshes/gripper_axis_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_finger1_1">
+  <inertial>
+    <origin xyz="-0.006300688531141588 0.04015682885335303 -0.01396333967995603" rpy="0 0 0"/>
+    <mass value="0.05675639567827485"/>
+    <inertia ixx="8.3e-05" iyy="1.2e-05" izz="7.4e-05" ixy="-3e-06" iyz="7e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.081277 -0.05487 0.026592" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion_to_urdf_description/meshes/gripper_finger1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.081277 -0.05487 0.026592" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion_to_urdf_description/meshes/gripper_finger1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_finger2_1">
+  <inertial>
+    <origin xyz="0.006301105851120731 0.04026656711953196 0.013644544327726719" rpy="0 0 0"/>
+    <mass value="0.05675638802575729"/>
+    <inertia ixx="8.3e-05" iyy="1.1e-05" izz="7.4e-05" ixy="3e-06" iyz="-6e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.081277 -0.05487 0.026592" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion_to_urdf_description/meshes/gripper_finger2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.081277 -0.05487 0.026592" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion_to_urdf_description/meshes/gripper_finger2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="강체 1" type="fixed">
+  <origin xyz="-0.116277 0.05487 -0.026592" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="gripper_axis_1"/>
+</joint>
+
+<joint name="회전 2" type="revolute">
+  <origin xyz="0.035 0.0 0.0" rpy="0 0 0"/>
+  <parent link="gripper_axis_1"/>
+  <child link="gripper_finger1_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.0" lower="-0.523599" effort="100" velocity="100"/>
+</joint>
+
+<joint name="회전 3" type="revolute">
+  <origin xyz="0.035 0.0 0.0" rpy="0 0 0"/>
+  <parent link="gripper_axis_1"/>
+  <child link="gripper_finger2_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.523599" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+</robot>

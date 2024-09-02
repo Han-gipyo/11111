@@ -1,23 +1,23 @@
 <?xml version="1.0" ?>
 <robot name="fusion_to_urdf" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<transmission name="회전 2_tran">
+<transmission name="revolute 2_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="회전 2">
+  <joint name="revolute 2">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="회전 2_actr">
+  <actuator name="revolute 2_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="회전 3_tran">
+<transmission name="revolute 3_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="회전 3">
+  <joint name="revolute 3">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="회전 3_actr">
+  <actuator name="revolute 3_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>

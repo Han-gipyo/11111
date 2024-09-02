@@ -1,0 +1,47 @@
+iiwa_with_gripper_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  revolute 1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  revolute 2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  revolute 3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  revolute 4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  revolute 5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 5
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  revolute 6_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 6
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  revolute 7_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 7
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  revolute 8_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 8
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  revolute 10_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 10
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  revolute 11_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: revolute 11
+    pid: {p: 100.0, i: 0.01, d: 10.0}

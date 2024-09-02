@@ -88,13 +88,13 @@
   </collision>
 </link>
 
-<joint name="강체 1" type="fixed">
+<joint name="째짯joint1" type="fixed">
   <origin xyz="-0.116277 0.05487 -0.026592" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="gripper_axis_1"/>
 </joint>
 
-<joint name="회전 2" type="revolute">
+<joint name="joint2" type="revolute">
   <origin xyz="0.035 0.0 0.0" rpy="0 0 0"/>
   <parent link="gripper_axis_1"/>
   <child link="gripper_finger1_1"/>
@@ -102,7 +102,7 @@
   <limit upper="0.0" lower="-0.523599" effort="100" velocity="100"/>
 </joint>
 
-<joint name="회전 3" type="revolute">
+<joint name="joint3" type="revolute">
   <origin xyz="0.035 0.0 0.0" rpy="0 0 0"/>
   <parent link="gripper_axis_1"/>
   <child link="gripper_finger2_1"/>

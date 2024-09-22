@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>iiwa_with_gripper_description</name>
+  <version>0.0.1</version>
+  <description>The iiwa_with_gripper_description package</description>
+
+  <maintainer email="syuntoku14@todo.todo">syuntoku14</maintainer>
+  <license>BSD</license>
+
+  <!-- Build tool dependency -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Build dependencies -->
+  <build_depend>rospy</build_depend>
+  <build_depend>controller_manager</build_depend>
+  <build_depend>joint_state_controller</build_depend>
+  <build_depend>effort_controllers</build_depend>
+
+  <!-- Export build dependencies -->
+  <build_export_depend>controller_manager</build_export_depend>
+  <build_export_depend>joint_state_controller</build_export_depend>
+  <build_export_depend>effort_controllers</build_export_depend>
+
+  <!-- Execution dependencies -->
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>effort_controllers</exec_depend>
+
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>

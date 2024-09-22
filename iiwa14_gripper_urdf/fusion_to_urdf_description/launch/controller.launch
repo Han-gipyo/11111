@@ -1,9 +1,0 @@
-<launch>
-
-<rosparam file="$(find fusion_to_urdf_description)/launch/controller.yaml" command="load"/>
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="fusion_to_urdf" args="joint 2_position_controller joint 3_position_controller joint_state_controller "/>
-<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-  <remap from="/joint_states" to="/fusion_to_urdf/joint_states"/>
-</node>
-
-</launch>
